@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for word in words %}
+        {% include 'includes/word_card.html' with words=words %}
+    {% endfor %}
+{% endblock content %}
