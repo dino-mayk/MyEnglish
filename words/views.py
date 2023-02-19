@@ -1,4 +1,5 @@
-from django.shortcuts import redirect, render
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, redirect, render
 
 from words.forms import AddWordForm
 from words.models import Word
@@ -29,5 +30,24 @@ def add(request):
         word.save()
 
         return redirect('homepage:home')
+
+    return render(request, template_name, context)
+
+
+def delete(request, pk):
+    template_name = 'words/delete.html'
+    word = get_object_or_404(Word, pk=pk)
+    context = {
+        'word': word,
+    }
+
+    if request.user.id != word.user.id:
+        messages.error(request, 'У вас недостаточно прав')
+        return redirect('homepage:home')
+
+    if request.POST:
+        word.delete()
+        messages.success(request, 'Ваше слово успешно удалено')
+        return redirect('words:list')
 
     return render(request, template_name, context)
