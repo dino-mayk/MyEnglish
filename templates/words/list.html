@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="row">
     {% for word in words %}
-        {% include 'includes/word_card.html' with words=words %}
+        <div class="col-4">
+            {% include 'includes/word_card.html' with words=words %}
+        </div>
     {% endfor %}
+</div>
 {% endblock content %}
