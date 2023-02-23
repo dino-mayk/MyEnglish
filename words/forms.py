@@ -2,7 +2,7 @@ from core.forms import AbstractModelForm
 from words.models import Word
 
 
-class AddWordForm(AbstractModelForm):
+class AddOrUpdateWordForm(AbstractModelForm):
     class Meta:
         model = Word
         fields = (

@@ -5,10 +5,9 @@
       <p class="card-text">{{ word.word_in_russian }}</p>
 
       <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <a href="https://dictionary.cambridge.org/dictionary/english-russian/{{ word.word_in_english }}" class="btn btn-primary" target="_blank">
-          Подробнее
-        </a>
+        <a type="button" class="btn btn-success" href="{% url 'words:edit' word.id %}">Изменить</a>
+        <a href="https://dictionary.cambridge.org/dictionary/english-russian/{{ word.word_in_english }}" class="btn btn-primary" target="_blank">Подробнее</a>
         <a type="button" class="btn btn-danger" href="{% url 'words:delete' word.id %}">Удалить</a>
-    </div>
+      </div>
     </div>
 </div>
