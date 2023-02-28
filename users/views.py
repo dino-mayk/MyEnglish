@@ -5,11 +5,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 
 from core.models import update_attrs
-from users.forms import (
-    SignUpForm,
-    LoginForm,
-    PasswordChange
-)
+from users.forms import LoginForm, PasswordChange, SignUpForm
 
 
 def signup(request):

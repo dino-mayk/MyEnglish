@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center">
+    <h2>Вы уверены, что хотите удалить слово "{{ word.word_in_english }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Да</button>
+        <a type="button" class="btn btn-primary" href="{% url 'words:list' %}">Нет</a>
+    </form>
+</div>
+{% endblock %}

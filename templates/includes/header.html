@@ -5,20 +5,27 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Ваши слова</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><a href="{% url 'words:list' %}" class="nav-link px-2 text-white">Ваши слова</a></li>
       </ul>
 
       <div class="text-end">
         {% if user.is_authenticated %}
-          <span>вы вошли</span>
-          <a class="btn btn-outline-light me-2" href="{% url 'users:logout' %}">выйти</a>
+          <a href="{% url 'words:add' %}"type="button" class="btn btn-warning">
+            Добавить слово
+          </a>
+          <div class="dropdown">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle m-2" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://sun9-28.userapi.com/impg/_IoXoVQfCT0Ea6wlv0LdWg2t2aSHN5kzIo8pnQ/BYJrAtkaNdg.jpg?size=1024x1024&quality=95&sign=feb75575ae124b51f911cef736186994&type=album" alt="..." class="rounded-circle" width="32" height="32">
+            </a>
+            <ul class="dropdown-menu text-center">
+              <li><a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a></li>            
+              <li><a class="dropdown-item" href="{% url 'users:password_change' %}">Изменить пароль</a></li>
+              <li><a class="dropdown-item" href="{% url 'users:logout' %}">Выход</a></li>
+            </ul>
+          </div>
         {% else %}
-          <a class="btn btn-outline-light me-2" href="{% url 'users:login' %}">Войти</a>
-          <a class="btn btn-warning" href="{% url 'users:signup' %}">Зарегистрироваться</a>
+          <a class="btn btn-outline-light m-1" href="{% url 'users:login' %}">Войти</a>
+          <a class="btn btn-outline-light m-1" href="{% url 'users:signup' %}">Зарегистрироваться</a>
         {% endif %}
       </div>
   </div>
