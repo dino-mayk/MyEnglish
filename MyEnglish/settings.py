@@ -23,18 +23,19 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    'homepage.apps.HomepageConfig',
+    'users.apps.UsersConfig',
+    'words.apps.WordsConfig',
+
+    'grappelli',
+    'sorl.thumbnail',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'homepage.apps.HomepageConfig',
-    'users.apps.UsersConfig',
-    'words.apps.WordsConfig',
-
-    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +118,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
 ]
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = 'static'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
