@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
@@ -9,6 +8,7 @@ urlpatterns = [
     path('', include('homepage.urls'), name='homepage'),
     path('auth/', include('users.urls'), name='users'),
     path('words/', include('words.urls'), name='words'),
+    path('translator/', include('translator.urls'), name='translator'),
 
     path('grappelli/', include('grappelli.urls')),
 ]

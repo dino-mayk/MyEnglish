@@ -1,9 +1,9 @@
 from django.urls import path
 
-from users import views
+from translator import views
 
 app_name = 'translator'
 
 urlpatterns = [
-    path('translator/', views.translator, name='translator'),
+    path('', views.index, name='index'),
 ]

@@ -1,0 +1,143 @@
+[33mcommit 3e6e1b7e54949213d6db3b36cfd3bd454a5ad115[m[33m ([m[1;36mHEAD -> [m[1;32mtranslator[m[33m, [m[1;31morigin/translator[m[33m)[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Mon Mar 6 23:03:23 2023 +0300
+
+    translator app (views, urls, apps)
+
+[33mcommit 6a8dfc200be670dee539673d4890c01ca569553e[m[33m ([m[1;31morigin/users[m[33m, [m[1;32musers[m[33m)[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Sun Mar 5 22:02:42 2023 +0300
+
+    debug toolbar
+
+[33mcommit fd3f6cfc6bb11911d2396b726a113568d06f3113[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Sun Mar 5 21:55:30 2023 +0300
+
+    Grappelli
+
+[33mcommit eb2546a80d08218dc4e565fc9b92dca4834d70e6[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Thu Mar 2 23:03:33 2023 +0300
+
+    signup template
+
+[33mcommit 06ddfa67522fd5b1a3383682571032cad6554c15[m
+Merge: 14d689c b67a2a9
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Tue Feb 28 21:29:43 2023 +0300
+
+    Merge pull request #6 from dino-mayk/dev
+    
+    words app to users
+
+[33mcommit b67a2a9773f35b2cb045cb69db9c4ad1c032950b[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Fri Feb 24 12:02:06 2023 +0300
+
+    license
+
+[33mcommit 5e96ba0c4e79acf61396e709209c94881238bed1[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Thu Feb 23 23:45:41 2023 +0300
+
+    ngrok
+
+[33mcommit b24cd98b3d7dd4229a25e72b17380e6b4b0a1466[m
+Merge: ffe18cb 5ef38a1
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Thu Feb 23 23:03:47 2023 +0300
+
+    Merge pull request #5 from dino-mayk/words
+    
+    ability to change words
+
+[33mcommit 5ef38a1d42bd839d99e38444e02e10b18bf24260[m[33m ([m[1;31morigin/words[m[33m, [m[1;32mwords[m[33m)[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Thu Feb 23 23:00:39 2023 +0300
+
+    ability to change words
+
+[33mcommit ffe18cb9af8294a5bd2c71ecf9b19e1fd6771771[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Tue Feb 21 20:05:03 2023 +0300
+
+    1000 most used english words
+
+[33mcommit 9164e5a9d9848bfe7789900f8e1671e016ef26dd[m
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Mon Feb 20 18:21:20 2023 +0300
+
+    python-package CI/CD
+
+[33mcommit 9c81f0e6f1e8389e5ad221ac4866289f5bcb331d[m
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Mon Feb 20 18:20:10 2023 +0300
+
+    django CI/CD
+
+[33mcommit 2e3923de3210ed0fa274ee1c733a52ea6a7ec8e7[m
+Merge: b7ea5b7 526aef8
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Sun Feb 19 14:14:49 2023 +0300
+
+    Merge pull request #4 from dino-mayk/words
+    
+    ability to delete words
+
+[33mcommit 526aef82b785c2a947a215fff92b214ff90c49c6[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Sun Feb 19 14:13:54 2023 +0300
+
+    ability to delete words
+
+[33mcommit b7ea5b7e9a02aefc418045e00363e50b9b95dcf4[m
+Merge: 0577281 8f7979b
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Sun Feb 19 12:18:25 2023 +0300
+
+    Merge pull request #3 from dino-mayk/words
+    
+    ability to add words, new design
+
+[33mcommit 8f7979b80a8b6c8debcb6c1446525d7f05336746[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Sun Feb 19 12:16:41 2023 +0300
+
+    ability to add words, new design
+
+[33mcommit 0577281df3bee7df213d4f87b3e4fa2c4aeb4d41[m
+Merge: 4b236eb cfe9aca
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Fri Feb 17 11:47:26 2023 +0300
+
+    Merge pull request #2 from dino-mayk/words
+    
+     word list
+
+[33mcommit cfe9aca94f8c2d59aa2ba984a44ddf0f871c898f[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Fri Feb 17 11:45:49 2023 +0300
+
+     word list
+
+[33mcommit 4b236ebf860eb535b82a6619c8d76ed5a3bb6781[m
+Merge: 9f153da 14d689c
+Author: Nikita Krasnov <nikitosikrasnov@gmail.com>
+Date:   Fri Feb 17 09:15:26 2023 +0300
+
+    Merge pull request #1 from dino-mayk/users
+    
+    core application, login system
+
+[33mcommit 14d689c9e06b1ab0e16659628ea9c0b78fbc9043[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Fri Feb 17 09:05:08 2023 +0300
+
+    core application, login system
+
+[33mcommit 9f153dacc11a80cd292a6be03eb892d094740f4f[m
+Author: Nikita <nikitosikrasnov@gmail.com>
+Date:   Thu Feb 16 22:25:20 2023 +0300
+
+    initial commit

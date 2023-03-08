@@ -2,7 +2,7 @@ from django.shortcuts import render
 from googletrans import Translator
 
 
-def translator(request):
+def index(request):
     if request.method == 'POST':
         lang = request.POST.get('lang', None)
         txt = request.POST.get('txt', None)
@@ -12,4 +12,4 @@ def translator(request):
 
         return render(request, 'translator.html', {'result': tr.text})
 
-    return render(request, 'translator.html')
+    return render(request, 'translator/translator.html')
