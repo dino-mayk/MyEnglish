@@ -3,7 +3,7 @@ from django.test import Client, TestCase
 
 
 class StaticURLTests(TestCase):
-    def test_homepage_endpoint(self):
-        with self.subTest('there is a homepage.'):
-            response = Client().get(reverse('homepage:home'))
+    def test_translator_endpoint(self):
+        with self.subTest('there is a translator.'):
+            response = Client().get(reverse('translator:index'))
             self.assertEqual(response.status_code, 200)

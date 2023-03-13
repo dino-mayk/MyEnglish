@@ -1,4 +1,5 @@
 import os
+import sys
 from os.path import dirname, join
 from pathlib import Path
 
@@ -6,7 +7,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_path = join(dirname(__file__), '../.env')
+dotenv_path = join(dirname(__file__), '../dev.env')
 load_dotenv(dotenv_path)
 
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
@@ -23,18 +24,19 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    'homepage.apps.HomepageConfig',
+    'users.apps.UsersConfig',
+    'words.apps.WordsConfig',
+
+    'grappelli',
+    'sorl.thumbnail',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'homepage.apps.HomepageConfig',
-    'users.apps.UsersConfig',
-    'words.apps.WordsConfig',
-
-    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MyEnglish.wsgi.application'
 
-
 DATABASES = {
     'default': {
        'ENGINE': ENGINE,
@@ -80,6 +81,12 @@ DATABASES = {
        'PORT': PORT,
     }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -117,9 +124,30 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
 ]
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = 'static'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+if DEBUG:
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ]
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+    INTERNAL_IPS = [
+        '127.0.0.1',
+    ]
+
+    import mimetypes
+    mimetypes.add_type(
+        'application/javascript',
+        '.js',
+    )
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }
