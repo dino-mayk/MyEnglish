@@ -10,6 +10,6 @@ def index(request):
         translator = Translator()
         tr = translator.translate(txt, dest=lang)
 
-        return render(request, 'translator.html', {'result': tr.text})
+        return render(request, 'translator/translator.html', {'result': tr.text})
 
     return render(request, 'translator/translator.html')

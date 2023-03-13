@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_path = join(dirname(__file__), '../.env')
+dotenv_path = join(dirname(__file__), '../dev.env')
 load_dotenv(dotenv_path)
 
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
