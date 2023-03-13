@@ -1,4 +1,5 @@
 import os
+import sys
 from os.path import dirname, join
 from pathlib import Path
 
@@ -70,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MyEnglish.wsgi.application'
 
-
 DATABASES = {
     'default': {
        'ENGINE': ENGINE,
@@ -81,6 +81,12 @@ DATABASES = {
        'PORT': PORT,
     }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
