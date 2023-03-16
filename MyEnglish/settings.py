@@ -126,9 +126,13 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'static'
 
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = 'auth/login/'
+LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 if DEBUG:

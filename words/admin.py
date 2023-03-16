@@ -9,4 +9,5 @@ class WordAdmin(admin.ModelAdmin):
         'user',
         'word_in_russian',
         'word_in_english',
+        'img_tmb',
     )
