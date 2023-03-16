@@ -16,7 +16,10 @@ def list(request):
 
 
 def add(request):
-    form = AddOrUpdateWordForm(request.POST)
+    form = AddOrUpdateWordForm(
+        request.POST,
+        files=request.FILES or None,
+    )
     template_name = 'words/add_or_edit.html'
     context = {
         'form': form,
@@ -40,6 +43,7 @@ def edit(request, pk):
     word = get_object_or_404(Word, pk=pk)
     form = AddOrUpdateWordForm(
         data=request.POST or None,
+        files=request.FILES or None,
         instance=word,
     )
     context = {

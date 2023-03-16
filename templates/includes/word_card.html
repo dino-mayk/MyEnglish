@@ -1,13 +1,13 @@
-<div class="card">
-    <img src="..." class="card-img-top" alt="Картинка слова">
-    <div class="card-body">
-      <h5 class="card-title">{{ word.word_in_english }}</h5>
-      <p class="card-text">{{ word.word_in_russian }}</p>
+{% load static %}
 
-      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+<div class="col">
+    {{ word.img_tmb }}
+    <h3>{{ word.word_in_english }}</h3>
+    <p>{{ word.word_in_russian }}</p>
+  
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
         <a type="button" class="btn btn-success" href="{% url 'words:edit' word.id %}">Изменить</a>
         <a href="https://dictionary.cambridge.org/dictionary/english-russian/{{ word.word_in_english }}" class="btn btn-primary" target="_blank">Подробнее</a>
         <a type="button" class="btn btn-danger" href="{% url 'words:delete' word.id %}">Удалить</a>
-      </div>
     </div>
 </div>
