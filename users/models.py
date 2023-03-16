@@ -14,7 +14,7 @@ class CustomUser(AbstractUser):
         upload_to='uploads/avatars/%Y/%m',
         verbose_name='аватар',
         help_text='загрузите картинку',
-        default='default_avatar.jpg',
+        default='default_user_avatar.png',
     )
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = [

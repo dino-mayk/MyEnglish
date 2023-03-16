@@ -28,6 +28,7 @@ class Word(models.Model):
         upload_to='uploads/preview/%Y/%m',
         verbose_name='картинка',
         help_text='загрузите картинку',
+        default='default_word_avatar.png',
         null=True,
     )
 
