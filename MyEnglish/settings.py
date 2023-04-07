@@ -1,4 +1,5 @@
 import os
+import sys
 from os.path import dirname, join
 from pathlib import Path
 
@@ -6,7 +7,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_path = join(dirname(__file__), '../.env')
+dotenv_path = join(dirname(__file__), '../dev.env')
 load_dotenv(dotenv_path)
 
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
@@ -70,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MyEnglish.wsgi.application'
 
-
 DATABASES = {
     'default': {
        'ENGINE': ENGINE,
@@ -81,6 +81,12 @@ DATABASES = {
        'PORT': PORT,
     }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -120,9 +126,13 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'static'
 
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = 'auth/login/'
+LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 if DEBUG:
