@@ -10,8 +10,16 @@ from users import views
 app_name = 'users'
 
 urlpatterns = [
-    path('signup/', views.signup, name='signup'),
-    path('profile/', views.profile, name='profile'),
+    path(
+        'signup/',
+        views.signup,
+        name='signup',
+    ),
+    path(
+        'profile/',
+        views.profile,
+        name='profile',
+    ),
     path(
         'login/',
         views.Login.as_view(
