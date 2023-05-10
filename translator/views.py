@@ -4,11 +4,14 @@ from googletrans import Translator
 
 def index(request):
     if request.method == 'POST':
-        lang = request.POST.get('lang', None)
-        txt = request.POST.get('txt', None)
+        try:
+            lang = request.POST.get('lang', None)
+            txt = request.POST.get('txt', None)
 
-        translator = Translator()
-        tr = translator.translate(txt, dest=lang)
+            translator = Translator()
+            tr = translator.translate(txt, dest=lang)
+        except Exception:
+            return render(request, 'translator/translator.html')
 
         return render(
             request,
