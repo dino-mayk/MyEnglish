@@ -22,7 +22,7 @@
     1. Static files:
         1. Create in bash conslole folders `static` and `media` on the same level as `src` folder. (/home/dinoMayk/MyEnglish/static and /home/dinoMayk/MyEnglish/media)
         1. Add url `/static/` and directory `/home/dinoMayk/MyEnglish/static`
-        1. Add url `/media/` and directory `/home/dinoMaykMyEnglish/media`
+        1. Add url `/media/` and directory `/home/dinoMayk/MyEnglish/media`
 1. `Edit WSGI configuration file` (click the link)
     1. Comment "hello world" section
     2. Find "django" section
