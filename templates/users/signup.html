@@ -26,7 +26,6 @@
   <main class="form-signin w-100 m-auto">
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <img class="mb-4" src="{% static '' %}" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
       {{ form.as_p }}
       {% if messages %}
@@ -36,7 +35,7 @@
       {% endif %}
       <button class="w-100 btn btn-lg btn-primary m-1" type="submit">Зарегистрироваться</button>
       <footer>
-        <p class="mt-5 mb-3 text-muted">© {% now "Y" %} MyEnglish, Inc</p>
+        <p class="mt-5 mb-3 text-muted">© {% now "Y" %} My English, Inc</p>
       </footer>
     </form>
   </main>
