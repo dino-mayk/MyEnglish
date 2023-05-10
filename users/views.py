@@ -1,11 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, PasswordChangeView
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 
 from core.models import update_attrs
-from users.forms import LoginForm, PasswordChange, SignUpForm
+from users.forms import LoginForm, PasswordChange, SignUpForm, ProfileForm
 
 
 def signup(request):
@@ -26,8 +27,24 @@ class Login(LoginView):
     form_class = LoginForm
 
 
+@login_required
 def profile(request):
-    return 'hello'
+    if request.method == 'POST':
+        form = ProfileForm(
+                data=request.POST,
+                files=request.FILES,
+                instance=request.user)
+        update = form.save(commit=False)
+        update.user = request.user
+        update.save()
+
+    form = ProfileForm(instance=request.user)
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'users/profile.html', context)
 
 
 class PasswordChange(PasswordChangeView):
